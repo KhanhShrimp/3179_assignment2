@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="vega_lite_vis.js"></script>
+
+    <title>Australia Economy Graph</title>
+
+    <style>
+        /* Set background and text color for the entire document */
+        body {
+            font-family: sans-serif;
+            background-color: black;
+            color: #D2B48C; /* Tan color */
+        }
+
+        /* Styling for each container (row) */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* Ensure each paragraph and graph is 500x400 */
+        .graph, .paragraph {
+            width: 500px;
+            height: 400px;
+        }
+
+        /* Ensure the paragraph is boxed in properly and aligns with the graph */
+        .paragraph {
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Line divider between rows */
+        .divider {
+            width: 1400px; /* Set a specific width for the divider */
+            height: 2px; /* Height of the divider */
+            background-color: #D2B48C; /* Tan color for the divider */
+            margin: 60px auto; /* Center the divider */
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .full-width-paragraph {
+            width: 1400px; /* Set the width of the full-width paragraph */
+            margin: 60px auto; /* Center the paragraph */
+            color: #D2B48C; /* Set text color to tan */
+            padding: 10px; /* Add padding for spacing */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Row 1: Map and Text -->
+    <div class="container">
+        <div class="paragraph">
+            <h1>Economy and Industry of Australia</h1>
+            <p>
+                The map on the right illustrates the <strong>total number of businesses</strong> recorded by state in 2023. 
+                <u><strong>New South Wales</strong></u> leads significantly, boasting the highest number of businesses, closely followed by <u><strong>Victoria</strong></u>. 
+                These two states remain the <strong>economic powerhouses of Australia</strong>, driving much of the country's commercial activity. 
+                In contrast, the <u><strong>Northern Territory</strong></u> shows a <strong>considerably smaller concentration</strong> of businesses, making it the least attractive region for new business ventures. 
+                This may reflect differences in population, infrastructure, and market opportunities between the states. 
+                The distribution highlights Australia's <strong>diverse economic landscape</strong>, where opportunities are <strong>concentrated</strong> in key urban and commercial centers.
+                <br><br>[<strong>Hover above each area to see detailed numbers of busineses</strong>]
+            </p>
+        </div>
+        <div class="graph" id="map_chart"></div>
+    </div>
+
+    <!-- Divider Line -->
+    <div class="divider"></div>
+
+    <!-- Row 2: Industry Chart and Text -->
+    <div class="container">
+        <div class="paragraph">
+            <h1>Number of Businesses by Industry in Australia for 2023</h1>
+            <p>
+                The 2023 data on Australian industries reveals key economic trends. 
+                The <strong>Construction</strong> sector leads with <strong>444,419</strong> businesses, indicating strong infrastructure development. 
+                Following closely are the <strong>Professional, Scientific and Technical Services</strong> and <strong>Rental, Hiring and Real Estate Services</strong>, with <strong>336,214</strong> and <strong>290,103</strong> businesses, respectively, reflecting robust demand in these areas. 
+                In contrast, the <strong>Mining</strong> and <strong>Electricity, Gas, Water and Waste Services</strong> sectors have significantly fewer businesses, at <strong>8,473</strong> and <strong>8,582</strong>, highlighting challenges in these industries. 
+                Overall, this data showcases a diverse economic landscape, with certain sectors clearly thriving while others require more focus and growth.
+            </p>
+        </div>
+        <div class="graph" id="industry_chart"></div>
+    </div>
+
+    <!-- Divider Line -->
+    <div class="divider"></div>
+
+    <!-- Row 3: Business Entry and Exit Charts -->
+    <div class="container">
+        <div class="graph" id="business_entry_chart"></div>
+        <div class="graph" id="business_exit_chart"></div>
+    </div>
+
+    <div class="full-width-paragraph">
+        <p>
+            Analyzing the charts, we observe a <strong>sharp increase in business entries following 2021</strong>, the height of the COVID years, with numbers returning to pre-pandemic levels in 2023. 
+            This surge may be attributed to <strong>various incentives implemented in 2022</strong> to encourage entrepreneurship and stimulate economic recovery. 
+            Similarly, the data reveals a <strong>significant rise in business exits in 2023</strong>, indicating ongoing challenges in the market. 
+            These trends reflect the complexities of economic recovery as businesses adapt to changing conditions.
+        </p>
+    </div>
+</body>
+
+</html>

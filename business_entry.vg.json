@@ -1,0 +1,73 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "Business Entries by Australia States from 2020-2023",
+    "data": {
+      "url": "business_clean.csv"
+    },
+    "selection" : {
+        "state_highlight" : {
+            "type" : "multi",
+            "fields" : [ "Label" ],
+            "bind" : "legend"
+        }
+    },
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",  
+        "timeUnit": "year",
+        "title": "Year",
+        "axis": {"labelColor": "#D2B48C",   
+                 "titleColor": "#D2B48C",
+                 "gridColor": "grey"  }
+      },
+      "y": {
+        "field": "Total number of business entries",
+        "type": "quantitative",
+        "title": "Total Number of Business Entries",
+        "axis": {"labelColor": "#D2B48C",   
+                 "titleColor": "#D2B48C",
+                 "gridColor": "grey"  }
+      },
+      "color": {
+        "field": "Label",
+        "type": "nominal",
+        "title": "State",
+        "legend": {
+          "labelColor": "#D2B48C",  
+          "titleColor": "#D2B48C"  
+        }
+      },
+      "opacity" : {
+        "condition" : { "selection" : "state_highlight", "value" : 0.6 },
+        "value" : 0.2
+      },
+      "tooltip": [
+        {
+          "field": "Year",
+          "type": "temporal",
+          "title": "Year"
+        },
+        {
+          "field": "Label",
+          "type": "nominal",
+          "title": "State"
+        },
+        {
+          "field": "Total number of business entries",
+          "type": "quantitative",
+          "title": "Total Entries"
+        }
+      ]
+    },
+    "config": {
+      "background": "black",   
+      "title": {
+        "color": "#D2B48C"       
+      }
+    }
+  }
+  

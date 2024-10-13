@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 400,
+  "title": "Number of Businesses by Industry in Australia for 2023",
+  "data": {
+    "url": "num_bus_by_indus_2023.csv"  
+  },
+  "transform": [
+    {"calculate": "parseInt(datum['Value'])", "as": "Value"}
+  ],
+  "mark": "bar",  
+  "encoding": {
+    "y": {  
+      "field": "Industry",
+      "type": "nominal",  
+      "title": "Industry",
+      "axis": {"labelAngle": 0,
+               "labelPadding": 10,
+               "labelColor": "#D2B48C",   
+               "titleColor": "#D2B48C"},
+      "sort": {"field": "Value", "order" : "descending"}  
+    },
+    "x": {  
+      "field": "Value",
+      "type": "quantitative",
+      "title": "Total Number of Businesses",
+      "axis": {
+        "labelColor": "#D2B48C",   
+        "titleColor": "#D2B48C",
+        "grid": false
+      }
+    },
+    "color": {  
+      "field": "Value",
+      "type": "quantitative",
+      "scale": {"scheme": "blues"},  
+      "legend": null  
+    },
+    "tooltip": [
+      {
+        "field": "Industry",
+        "type": "nominal",
+        "title": "Industry"
+      },
+      {
+        "field": "Value",
+        "type": "quantitative",
+        "title": "Number of Businesses"
+      }
+    ]
+  },
+  "config": {
+    "background": "black",   
+    "title": {
+      "color": "#D2B48C"       
+    }
+  }
+}
